@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rithambara | Premium Event & Wedding Venues</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            terracotta: '#A33B26',
+                            gold: '#D99B26',
+                            dark: '#1E2022',
+                            cream: '#FA97A3',
+                            moss: '#2D4A3E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Alpine.js for interactive state management -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-terracotta selection:text-white" x-data="{ mobileMenu: false, activeTab: 'all' }">
+
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-t-full bg-brand-terracotta flex items-center justify-center text-white font-script text-2xl shadow-md">
+                    R
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-script text-3xl text-brand-terracotta leading-none">Rithambara</span>
+                    <span class="text-[9px] tracking-[0.25em] font-bold text-gray-500 uppercase">Venues & Events</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-700">
+                <a href="#halls" class="hover:text-brand-terracotta transition-colors">Our Venues</a>
+                <a href="#amenities" class="hover:text-brand-terracotta transition-colors">Amenities</a>
+                <a href="#gallery" class="hover:text-brand-terracotta transition-colors">Gallery</a>
+                <a href="#booking" class="hover:text-brand-terracotta transition-colors">Check Slots</a>
+                <a href="#location" class="hover:text-brand-terracotta transition-colors">Location</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center">
+                <a href="#booking" class="bg-brand-terracotta hover:bg-red-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg">
+                    Book Site Visit
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div x-show="mobileMenu" x-transition class="md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3">
+            <a href="#halls" @click="mobileMenu = false" class="block font-medium text-gray-700 hover:text-brand-terracotta">Our Venues</a>
+            <a href="#amenities" @click="mobileMenu = false" class="block font-medium text-gray-700 hover:text-brand-terracotta">Amenities</a>
+            <a href="#gallery" @click="mobileMenu = false" class="block font-medium text-gray-700 hover:text-brand-terracotta">Gallery</a>
+            <a href="#booking" @click="mobileMenu = false" class="block font-medium text-gray-700 hover:text-brand-terracotta">Check Availability</a>
+            <a href="#location" @click="mobileMenu = false" class="block font-medium text-gray-700 hover:text-brand-terracotta">Location & Map</a>
+            <a href="#booking" @click="mobileMenu = false" class="block text-center w-full bg-brand-terracotta text-white py-2.5 rounded-xl font-semibold">Book Site Visit</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-brand-dark text-white py-20 lg:py-32 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="IMG-20260905-WA0045.jpg" alt="Rithambara Venue View" class="w-full h-full object-cover opacity-35 object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-brand-gold text-xs font-semibold uppercase tracking-wider mb-6">
+                <i class="fa-solid fa-sparkles"></i> Welcome to Rithambara
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight max-w-4xl">
+                Where Grand Occasions Meet Architectural Elegance
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl font-light">
+                Featuring two versatile grand venues spanning over 25,000+ sq. ft., lush green surroundings, dedicated dining spaces, and 14,000 sq. ft. parking.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#booking" class="bg-brand-terracotta hover:bg-red-800 text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Reserve Event Date
+                </a>
+                <a href="https://maps.app.goo.gl/eoiVPCyDBNswEAu97" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-center transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-location-dot text-brand-gold"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Comparison Cards Section -->
+    <section id="halls" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand-terracotta font-bold text-sm uppercase tracking-widest">Our Distinct Venues</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mt-2 text-gray-900">Choose Your Canvas</h2>
+            <p class="text-gray-600 mt-4">Whether you prefer an open-air nature backdrop or an architectural banquet hall, Rithambara caters to every scale of celebration.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Venue 1 Card -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="IMG-20260905-WA0046.jpg" alt="Venue 1 Open Nature" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-moss text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            Venue 1 • Open Air
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900">Nature-Integrated Open Venue</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Open to nature and air, fully customizable to your preferred theme setup for lush outdoor ceremonies.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 my-6 py-4 border-y border-gray-100 text-sm">
+                            <div>
+                                <span class="text-gray-400 block text-xs">Total Area</span>
+                                <span class="font-bold text-gray-800 text-base">11,500 sq. ft.</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Seating Capacity</span>
+                                <span class="font-bold text-gray-800 text-base">250 Guests</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Dining Capacity</span>
+                                <span class="font-bold text-gray-800 text-base">150 Guests</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Bridal Rooms</span>
+                                <span class="font-bold text-gray-800 text-base">2 A/C Suites</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100">
+                            <span class="text-xs font-bold text-amber-900 uppercase tracking-wider block mb-2"><i class="fa-regular fa-clock"></i> Daily Slot Timings</span>
+                            <div class="flex justify-between text-xs text-amber-950 font-medium">
+                                <span>🌅 Morning: 06:00 AM – 03:00 PM</span>
+                                <span>🌆 Evening: 03:00 PM – 11:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 pt-0">
+                    <a href="#booking" class="block text-center w-full bg-gray-900 hover:bg-brand-terracotta text-white font-semibold py-3 rounded-xl transition-colors">
+                        Inquire for Venue 1
+                    </a>
+                </div>
+            </div>
+
+            <!-- Venue 2 Card -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="IMG-20260905-WA0047.jpg" alt="Venue 2 Grand Architecture" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-terracotta text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            Venue 2 • Indoor Grand Banquet
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900">Architectural Closed Hall</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Features high pitched timber ceilings, grand crystal chandeliers, slate flooring, and terracotta brick entrance.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 my-6 py-4 border-y border-gray-100 text-sm">
+                            <div>
+                                <span class="text-gray-400 block text-xs">Total Area</span>
+                                <span class="font-bold text-gray-800 text-base">14,000 sq. ft.</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Seating Capacity</span>
+                                <span class="font-bold text-gray-800 text-base">300 Guests</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Dining Capacity</span>
+                                <span class="font-bold text-gray-800 text-base">180 Guests</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block text-xs">Bridal Rooms</span>
+                                <span class="font-bold text-gray-800 text-base">2 A/C Suites</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100">
+                            <span class="text-xs font-bold text-amber-900 uppercase tracking-wider block mb-2"><i class="fa-regular fa-clock"></i> Daily Slot Timings</span>
+                            <div class="flex justify-between text-xs text-amber-950 font-medium">
+                                <span>🌅 Morning: 06:00 AM – 03:00 PM</span>
+                                <span>🌆 Evening: 03:00 PM – 11:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 pt-0">
+                    <a href="#booking" class="block text-center w-full bg-brand-terracotta hover:bg-red-800 text-white font-semibold py-3 rounded-xl transition-colors">
+                        Inquire for Venue 2
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Infrastructure & Amenities -->
+    <section id="amenities" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-900">World-Class Infrastructure</h2>
+                <p class="text-gray-600 mt-2">Designed from the ground up to ensure guest comfort and effortless event execution.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 bg-amber-100 text-brand-gold rounded-full flex items-center justify-center mx-auto text-xl mb-4">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900">14,000 sq. ft. Parking</h4>
+                    <p class="text-xs text-gray-500 mt-1">Dedicated vehicle parking lot with easy entry/exit flow.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 bg-red-100 text-brand-terracotta rounded-full flex items-center justify-center mx-auto text-xl mb-4">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900">Flexible Catering</h4>
+                    <p class="text-xs text-gray-500 mt-1">In-house available OR bring your preferred external caterers.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl mb-4">
+                        <i class="fa-solid fa-door-closed"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900">4 Green Rooms</h4>
+                    <p class="text-xs text-gray-500 mt-1">2 private air-conditioned bridal/groom suites per venue.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mx-auto text-xl mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900">100% Power Backup</h4>
+                    <p class="text-xs text-gray-500 mt-1">Uninterrupted heavy-duty generator power for lighting & audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Interactive Multi-Venue Gallery Section -->
+<section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ galleryTab: 'venue2' }">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-brand-terracotta font-bold text-sm uppercase tracking-widest">Visual Tour</span>
+        <h2 class="text-3xl font-serif font-bold text-gray-900 mt-1">Explore Our Venues</h2>
+        <p class="text-gray-600 text-sm mt-2">Filter the gallery below to view specific halls and architectural renders.</p>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+            <button 
+                @click="galleryTab = 'venue2'" 
+                :class="galleryTab === 'venue2' ? 'bg-brand-terracotta text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2">
+                <i class="fa-solid fa-building"></i> Venue 2 (Indoor Banquet)
+            </button>
+
+            <button 
+                @click="galleryTab = 'venue1'" 
+                :class="galleryTab === 'venue1' ? 'bg-brand-moss text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2">
+                <i class="fa-solid fa-tree"></i> Venue 1 (Open Air Nature)
+            </button>
+
+            <button 
+                @click="galleryTab = 'all'" 
+                :class="galleryTab === 'all' ? 'bg-gray-900 text-white shadow-md' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all">
+                Show All
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- VENUE 2 IMAGES (From Architectural PDF) -->
+        <div x-show="galleryTab === 'venue2' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="IMG-20260905-WA0045.jpg" onError="this.src='https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80'" alt="Venue 2 Terracotta Entrance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-terracotta">Venue 2</span>
+                <p class="font-semibold text-sm mt-1">Terracotta Entrance & Exterior Render</p>
+            </div>
+        </div>
+
+        <div x-show="galleryTab === 'venue2' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="IMG-20260905-WA0046.jpg" onError="this.src='https://images.unsplash.com/photo-1545232979-fbf59202c395?auto=format&fit=crop&w=800&q=80'" alt="Venue 2 Pitch Roof & Chandeliers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-terracotta">Venue 2</span>
+                <p class="font-semibold text-sm mt-1">Grand Timber Roof & Chandelier Seating</p>
+            </div>
+        </div>
+
+        <div x-show="galleryTab === 'venue2' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="v2-interior-stage.jpg" onError="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80'" alt="Venue 2 Stage View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-terracotta">Venue 2</span>
+                <p class="font-semibold text-sm mt-1">Grand Stage & Golden Seating Layout</p>
+            </div>
+        </div>
+        <div x-show="galleryTab === 'venue2' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="v2-exterior-dusk.jpg" onError="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80'" alt="Venue 2 Stage View" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-terracotta">Venue 2</span>
+                <p class="font-semibold text-sm mt-1">Grand Stage & Golden Seating Layout</p>
+            </div>
+        </div>
+        <div x-show="galleryTab === 'venue2' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="v2-interior-backwall.jpg" onError="this.src='https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80'" alt="Venue 2 Back Feature Wall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-terracotta">Venue 2</span>
+                <p class="font-semibold text-sm mt-1">Brick Accent Emblem & VIP Sofa Lounge</p>
+            </div>
+        </div>
+
+        <!-- VENUE 1 IMAGES (Temporary Placeholders until you upload real photos) -->
+        <div x-show="galleryTab === 'venue1' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Venue 1 Open Nature Lawn" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-moss">Venue 1 (Placeholder)</span>
+                <p class="font-semibold text-sm mt-1">Lush Green Outdoor Event Lawn</p>
+            </div>
+        </div>
+
+        <div x-show="galleryTab === 'venue1' || galleryTab === 'all'" x-transition class="group relative rounded-2xl overflow-hidden h-72 shadow-md bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Venue 1 Outdoor Theme Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-brand-moss">Venue 1 (Placeholder)</span>
+                <p class="font-semibold text-sm mt-1">Custom Nature-Integrated Theme Setup</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Booking / Slot Booking Form Section -->
+    <section id="booking" class="py-20 bg-brand-dark text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold">Check Slot Availability</h2>
+                    <p class="text-gray-400 mt-2 text-sm">Select your preferences below to instantly check dates via WhatsApp.</p>
+                </div>
+
+                <form id="whatsappForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="custName" required placeholder="John Doe" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-terracotta">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Event Date</label>
+                            <input type="date" id="eventDate" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-terracotta">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Select Venue</label>
+                            <select id="venueChoice" class="w-full bg-gray-800 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-terracotta">
+                                <option value="Venue 1 (Open Air)">Venue 1 (Open Air)</option>
+                                <option value="Venue 2 (Closed Banquet)">Venue 2 (Closed Banquet)</option>
+                                <option value="Both Venues (Full Property)">Both Venues (Full Property)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Select Time Slot</label>
+                            <select id="slotChoice" class="w-full bg-gray-800 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-terracotta">
+                                <option value="Morning Slot (6:00 AM - 3:00 PM)">Morning Slot (6 AM - 3 PM)</option>
+                                <option value="Evening Slot (3:00 PM - 11:00 PM)">Evening Slot (3 PM - 11 PM)</option>
+                                <option value="Full Day (6:00 AM - 11:00 PM)">Full Day (Both Slots)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Catering Preference</label>
+                            <select id="cateringChoice" class="w-full bg-gray-800 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-terracotta">
+                                <option value="In-House Catering">In-House Catering</option>
+                                <option value="Own / External Catering">Own / External Catering</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-lg shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Connect on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-terracotta font-bold text-sm uppercase tracking-widest">Easy Accessibility</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">Visit Rithambara</h2>
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Conveniently located on Hesarghatta Main Road with seamless road access for guests and heavy logistical transport.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-red-50 text-brand-terracotta rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900">Address</h5>
+                                <p class="text-sm text-gray-600">Hesarghatta Rd, Hurulichikanahalli, Huralichikkanahalli, Karnataka 560090, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900">Phone & WhatsApp</h5>
+                                <p class="text-sm text-gray-600">+91 9741848336</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://maps.app.goo.gl/eoiVPCyDBNswEAu97" target="_blank" class="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-terracotta transition-colors">
+                            Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embedded Visual iframe -->
+                <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-200 h-96">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0023456!2d77.5028!3d13.0985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA1JzU0LjYiTiA3N8KwMzAnMTAuMSJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-400 py-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between md:items-center">
+            <p class="text-sm">© 2026 Rithambara Venues. All rights reserved.</p>
+            <div class="mt-4 md:mt-0 flex justify-center gap-6 text-sm">
+                <a href="#halls" class="hover:text-white">Venues</a>
+                <a href="#booking" class="hover:text-white">Bookings</a>
+                <a href="tel:9741848336" class="hover:text-white">Call Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Dual Floating Action Bar (Mobile & Desktop) -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-gray-900/90 backdrop-blur-md p-2 rounded-full shadow-2xl border border-white/20">
+        <!-- Direct Phone Call Button -->
+        <a href="tel:9741848336" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full flex items-center gap-2 text-sm font-bold transition-all shadow-md">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call</span>
+        </a>
+
+        <!-- WhatsApp Direct Chat Button -->
+        <a href="https://wa.me/919741848336?text=Hi%20Rithambara%20Team%2C%20I%20would%20like%20to%20inquire%20about%20booking%20slots%20for%20my%20event." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full flex items-center gap-2 text-sm font-bold transition-all shadow-md">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp Inquiry</span>
+        </a>
+    </div>
+
+    <!-- JavaScript for Dynamic WhatsApp Link Generation -->
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('custName').value || 'Guest';
+            const date = document.getElementById('eventDate').value || 'Not specified';
+            const venue = document.getElementById('venueChoice').value;
+            const slot = document.getElementById('slotChoice').value;
+            const catering = document.getElementById('cateringChoice').value;
+
+            const textMessage = `Hi Rithambara Team,%0A%0AI would like to check availability for an event:%0A• *Name:* ${encodeURIComponent(name)}%0A• *Event Date:* ${encodeURIComponent(date)}%0A• *Venue:* ${encodeURIComponent(venue)}%0A• *Preferred Slot:* ${encodeURIComponent(slot)}%0A• *Catering:* ${encodeURIComponent(catering)}`;
+
+            window.open(`https://wa.me/919741848336?text=${textMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
