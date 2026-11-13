@@ -1,0 +1,1 @@
+(()=>{const n=document.getElementById('nav'),b=document.getElementById('menuBtn');if(b){b.onclick=()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)};n.onclick=e=>{if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded',false)}}}const a=document.getElementById('ann');if(a&&new Date()>=new Date('2026-11-23T00:00'))a.remove()})();
