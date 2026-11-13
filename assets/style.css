@@ -183,3 +183,6 @@ dialog h2{font-size:2.2rem}
 .cta .btn{margin:22px 6px 0;background:#fff;color:#2F4A2E;border-color:#fff}.cta .btn:hover{background:#B58E4B;border-color:#B58E4B;color:#1B2A1C}
 section.pad{padding:64px 0}
 @media(max-width:820px){.ph .wrap{grid-template-columns:1fr;gap:24px}.ph img{order:-1}}
+
+.ann .annmap{display:block;margin:3px 0 0;font-weight:600;white-space:normal}
+@media(min-width:821px){.ann .annmap{display:inline;margin:0 0 0 16px}}
